@@ -10,7 +10,7 @@ const Homepage = () => {
   const allArtworks = useSelector((state) => state.artworks);
   return (
     <div>
-      <section className="home-card pt-20 w-full bg-gray-900 h-60 flex border-t border-b">
+      <section className="home-card pt-20 w-full bg-gray-900 h-60 flex">
         <span className="w-1/2 text-white font-bold py-8  font-Lato mx-auto text-2xl text-right">
           The single best way to kick-art your day!
         </span>

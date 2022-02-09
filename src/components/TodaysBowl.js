@@ -8,9 +8,9 @@ const TodaysBowl = (payload) => {
   if (payload !== undefined && visibleArtworkList.length > 0) {
     // console.log(payload);
     visibleArtworkList.forEach((artwork) => {
-      // if (artwork.color !== null) {
-      bgColor = `hsl(${artwork.color.h}, ${artwork.color.s}%, ${artwork.color.l}%)`;
-      // } else { bgColor = 'hsl(100, 50%, 50%)'; }
+      if (artwork.color !== null) {
+        bgColor = `hsl(${artwork.color.h}, ${artwork.color.s}%, ${artwork.color.l}%)`;
+      } else { bgColor = 'hsl(40, 2%, 21%)'; }
       artArray.push(
         <Link
           to={`/artwork/${artwork.id}`}
@@ -21,8 +21,8 @@ const TodaysBowl = (payload) => {
       text-white flex"
         >
           <div className="flex-row p-5 h-full w-full">
-            <p className="font-Work text-xl mb-auto text-right">{artwork.title}</p>
-            <p className="font-Lato text-sm font-bold mt-1 text-right">{artwork.artist_title ? artwork.artist_title : 'Unknown'}</p>
+            <p className={`font-Work text-lg font-bold mb-auto text-right ${artwork.color.l > 80 ? 'text-neutral-400' : 'text-white'}`}>{artwork.title.length > 60 ? artwork.title.substr(0, 60).concat('...') : artwork.title }</p>
+            <p className={`font-Lato text-sm font-bold mt-1 text-right ${artwork.color.l > 80 ? 'text-neutral-400' : 'text-white'}`}>{artwork.artist_title ? artwork.artist_title : 'Unknown'}</p>
           </div>
         </Link>,
 
