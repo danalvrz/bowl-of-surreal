@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header section renders Header correctly 1`] = `
+<div
+  className="w-full fixed z-50"
+>
+  <header
+    className="flex sticky h-16 justify-between bg-gray-800 py-4 px-3"
+  >
+    <button
+      onClick={[Function]}
+      type="button"
+    >
+      <img
+        alt="arrow-back"
+        className="invert opacity-0"
+        src="arrow.png"
+        width="25"
+      />
+    </button>
+    <span
+      className="font-Work text-2xl text-white"
+    >
+      bowl-of-surreal
+    </span>
+    <span
+      className="pr-3"
+    >
+      <img
+        alt="arrow-back"
+        className="pt-1 invert"
+        src="dots.png"
+        width="25"
+      />
+    </span>
+  </header>
+</div>
+`;

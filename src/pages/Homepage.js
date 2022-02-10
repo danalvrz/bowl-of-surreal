@@ -1,7 +1,7 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Cereal from '../imgs/cereal.png';
-import TodaysBowl from './TodaysBowl';
+import TodaysBowl from '../components/TodaysBowl';
 
 const Homepage = () => {
   let colorInput = '';
