@@ -1,3 +1,4 @@
+// Mocking data object
 const testy = {
   pagination: {
     total: 115842, limit: 20, offset: 0, total_pages: 5793, current_page: 1, next_url: 'https://api.artic.edu/api/v1/artworks?page=2&limit=20',

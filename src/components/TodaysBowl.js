@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import Loading from './LoadingScreen';
-import ErrorScreen from './ErrorScreen';
+import Loading from '../pages/LoadingScreen';
+import ErrorScreen from '../pages/ErrorScreen';
 
 const TodaysBowl = (payload) => {
   const responseStatus = useSelector((state) => state.responseStatus);
@@ -10,7 +10,6 @@ const TodaysBowl = (payload) => {
   let bgColor = '';
   const { visibleArtworkList } = payload;
   if (payload !== undefined && visibleArtworkList.length > 0) {
-    // console.log(payload);
     visibleArtworkList.forEach((artwork) => {
       if (artwork.color !== null) {
         bgColor = `hsl(${artwork.color.h}, ${artwork.color.s}%, ${artwork.color.l}%)`;
