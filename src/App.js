@@ -1,31 +1,37 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import Homepage from './components/Homepage';
 import Header from './components/Header';
 import ArtworkPage from './components/Artworkpage';
-import testy from './testo';
-// import Footer from './components/Footer';
+import colorNormalizer from './colorNormalizer';
 
 function App() {
   const dispatch = useDispatch();
+  const artworksList = useSelector((state) => state.artworks);
+  const baseURL = `https://api.artic.edu/api/v1/artworks?limit=20&fields=id,title,artist_title,alt_text,image_id,color,date_display,place_of_origin,medium_display,main_reference_number&page=${Math.floor(Math.random() * 500)}`;
+  const fectchOptions = { method: 'GET' };
   document.body.classList.add('bg-gray-900');
-  const colorNormalizedArtwork = () => testy.data.forEach((element) => {
-    if (element.color === null) {
-      // eslint-disable-next-line no-param-reassign
-      element.color = {
-        h: 40, l: 21, s: 2, percentage: 0.002020851142084023, population: 10,
-      };
-    }
-  });
-  colorNormalizedArtwork();
 
   useEffect(() => {
-    dispatch({ type: 'FETCH_ARTWORKS', payload: testy.data });
-  });
+    dispatch({ type: 'LOADING' });
+    const initialFetch = (url = baseURL, options = fectchOptions) => fetch(url, options)
+      .then((response) => {
+        if (response.ok) {
+          dispatch({ type: 'OK' });
+          response.json().then((data) => dispatch({ type: 'FETCH_ARTWORKS', payload: colorNormalizer(data.data) }));
+        }
+        if (!response.ok && response.status === 500) {
+          dispatch({ type: 'ERROR' });
+        }
+        throw new Error(response.status);
+      })
+      .catch((error) => console.error(error.message));
+    initialFetch();
+  }, []);
 
   useEffect(() => {
-    dispatch({ type: 'ALL', artworks: testy.data });
+    dispatch({ type: 'ALL', artworks: artworksList });
   });
 
   return (
