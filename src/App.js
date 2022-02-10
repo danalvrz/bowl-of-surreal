@@ -14,18 +14,20 @@ function App() {
   document.body.classList.add('bg-gray-900');
 
   useEffect(() => {
-    const fetchArtwork = (url = baseURL, options = fectchOptions, retries) => fetch(url, options)
+    dispatch({ type: 'LOADING' });
+    const initialFetch = (url = baseURL, options = fectchOptions) => fetch(url, options)
       .then((response) => {
         if (response.ok) {
+          dispatch({ type: 'OK' });
           response.json().then((data) => dispatch({ type: 'FETCH_ARTWORKS', payload: colorNormalizer(data.data) }));
         }
-        if (!response.ok) {
-          return setTimeout(fetchArtwork(url, options, retries - 1), 100);
+        if (!response.ok && response.status === 500) {
+          dispatch({ type: 'ERROR' });
         }
         throw new Error(response.status);
       })
       .catch((error) => console.error(error.message));
-    fetchArtwork();
+    initialFetch();
   }, []);
 
   useEffect(() => {

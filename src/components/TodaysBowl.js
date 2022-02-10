@@ -1,7 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import Loading from './LoadingScreen';
+import ErrorScreen from './ErrorScreen';
 
 const TodaysBowl = (payload) => {
+  const responseStatus = useSelector((state) => state.responseStatus);
   const artArray = [];
   let bgColor = '';
   const { visibleArtworkList } = payload;
@@ -29,6 +33,10 @@ const TodaysBowl = (payload) => {
       );
     });
     return artArray;
+  } if (responseStatus === 'LOADING') {
+    return <Loading />;
+  } if (responseStatus === 'ERROR') {
+    return <ErrorScreen />;
   }
   return (
     <div className="text-white font-Lato text-3xl font-bold mx-auto p-20 h-screen text-center">
