@@ -2,7 +2,6 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Cereal from '../imgs/cereal.png';
 import TodaysBowl from '../components/TodaysBowl';
-import Options from '../components/Options';
 
 const Homepage = () => {
   let colorInput = '';
@@ -11,14 +10,19 @@ const Homepage = () => {
   const allArtworks = useSelector((state) => state.artworks);
   return (
     <div>
-      <Options />
-      <section className="home-card flex h-60 w-full bg-gray-900 pt-20">
-        <span className="font-Lato mx-auto w-1/2 py-6  text-right text-2xl font-bold text-white">
-          The single best way to kick-art your day!
-        </span>
-        <span className="mx-auto pr-8 invert">
-          <img src={Cereal} alt="ceral bowl" width="120" />
-        </span>
+      <section id="welcome" role="note" className="home-card flex-col h-64 w-full bg-gray-900 pt-20 mb-5">
+        <h2 className="not-italic font-Work text-2xl  text-center font-bold text-white">Welcome!</h2>
+        <div className="flex mb-5">
+          <p className="italic font-Lato mx-auto w-2/5 text-base text-right font-normal text-white">
+            <br />
+            Everytime you visit this site, it will display a random bowl of 20 artworks.
+            <br />
+            Explore and enjoy!
+          </p>
+          <span className="mx-auto px-8 saturate-150">
+            <img src={Cereal} alt="ceral bowl" width="150" />
+          </span>
+        </div>
       </section>
       <div className="font-Work flex h-14 justify-between bg-gray-800 py-3 px-4 text-white">
         <span className="text-xl font-semibold">Today&apos;s bowl</span>

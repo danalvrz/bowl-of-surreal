@@ -5,6 +5,7 @@ import { useSelector } from 'react-redux';
 const ArtworkPage = () => {
   const { artworkId } = useParams();
   const artworks = useSelector((state) => state.artworks);
+  window.scrollTo(0, 0);
   const currentArtwork = artworks.filter(
     (artwork) => artwork.id === parseInt(artworkId, 10),
   )[0];

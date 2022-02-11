@@ -37,7 +37,7 @@ const AboutPage = () => (
       <br />
       Happy surreal-bowling!
     </p>
-    <div className="flex justify-center invert">
+    <div className="flex justify-center saturate-150">
       <img src={Cereal} alt="ceral bowl" width="120" />
     </div>
   </section>
