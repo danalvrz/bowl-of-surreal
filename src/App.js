@@ -5,6 +5,8 @@ import Homepage from './pages/Homepage';
 import Header from './components/Header';
 import ArtworkPage from './pages/Artworkpage';
 import fetchArtwork from './utils/fetchArtworks';
+import AboutPage from './pages/AboutPage';
+import QuizPage from './pages/QuizPage';
 
 function App() {
   const dispatch = useDispatch();
@@ -26,6 +28,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Homepage />} />
           <Route path="/artwork/:artworkId" element={<ArtworkPage />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/quiz" element={<QuizPage />} />
         </Routes>
       </Router>
     </div>

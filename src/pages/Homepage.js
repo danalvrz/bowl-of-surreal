@@ -2,6 +2,7 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Cereal from '../imgs/cereal.png';
 import TodaysBowl from '../components/TodaysBowl';
+import Options from '../components/Options';
 
 const Homepage = () => {
   let colorInput = '';
@@ -10,15 +11,16 @@ const Homepage = () => {
   const allArtworks = useSelector((state) => state.artworks);
   return (
     <div>
-      <section className="home-card pt-20 w-full bg-gray-900 h-60 flex">
-        <span className="w-1/2 text-white font-bold py-8  font-Lato mx-auto text-2xl text-right">
+      <Options />
+      <section className="home-card flex h-60 w-full bg-gray-900 pt-20">
+        <span className="font-Lato mx-auto w-1/2 py-6  text-right text-2xl font-bold text-white">
           The single best way to kick-art your day!
         </span>
         <span className="mx-auto pr-8 invert">
           <img src={Cereal} alt="ceral bowl" width="120" />
         </span>
       </section>
-      <div className="bg-gray-800 text-white h-14 py-3 px-4 font-Work flex justify-between">
+      <div className="font-Work flex h-14 justify-between bg-gray-800 py-3 px-4 text-white">
         <span className="text-xl font-semibold">Today&apos;s bowl</span>
         <span>
           <select
@@ -27,13 +29,14 @@ const Homepage = () => {
               dispatch({
                 type: colorInput.value.toUpperCase(),
                 artworks: allArtworks,
-              }); e.target.blur();
+              });
+              e.target.blur();
             }}
             id="categories"
             ref={(node) => {
               colorInput = node;
             }}
-            className="ml-10 h-8 rounded px-1 text-white bg-gray-900 border"
+            className="ml-10 h-8 rounded border bg-gray-900 px-1 text-white"
           >
             <option value="all">All colors</option>
             <option value="blue">Blue</option>
