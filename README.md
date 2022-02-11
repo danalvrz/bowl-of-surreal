@@ -22,6 +22,8 @@ Please enjoy!
 
 [Live Demo Link](https://bowl-of-surreal.netlify.app)
 
+[Video tour](https://www.loom.com/share/5bcfb7472f384bf3a300b732480f7979?sharedAppSource=personal_library)
+
 ## Getting Started
 
 To get a local copy up and running follow the instructions.
