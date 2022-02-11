@@ -17,6 +17,7 @@ const fetchArtwork = async (options = fetchOptions) => {
     }
     throw new Error(response.status);
   } catch (error) {
+    // eslint-disable-next-line no-console
     return console.error(error.message);
   }
 };
