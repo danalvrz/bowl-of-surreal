@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Todays bowl section renders TodaysBowl correctly 1`] = `
+<div
+  className="text-white font-Lato text-3xl font-bold mx-auto p-20 h-screen text-center"
+>
+  Oops! Seems like today‘s bowl doesn‘t have that color!
+   
+  <br />
+   
+   
+  <br />
+   
+  Try a different one..
+</div>
+`;
