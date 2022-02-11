@@ -1,20 +1,46 @@
-const initialVisibleArtwork = [];
+const initialVisibleArtwork = { array: [], selectedColor: '' };
 const colorsFilter = (artworks = initialVisibleArtwork, action) => {
   switch (action.type) {
     case 'ALL':
-      return action.artworks;
+      return { ...artworks, array: action.artworks, selectedColor: action.type };
     case 'BLUE':
-      return action.artworks.filter((artwork) => artwork.color.h >= 180 && artwork.color.h <= 220);
+      return {
+        ...artworks,
+        array: action.artworks.filter(
+          (artwork) => artwork.color.h >= 180 && artwork.color.h <= 220,
+        ),
+        selectedColor: action.type,
+      };
     case 'RED':
-      return action.artworks.filter((artwork) => artwork.color.h >= 300 || artwork.color.h <= 10);
+      return {
+        ...artworks,
+        array: action.artworks.filter((artwork) => artwork.color.h >= 300 || artwork.color.h <= 10),
+        selectedColor: action.type,
+      };
     case 'YELLOW':
-      return action.artworks.filter((artwork) => artwork.color.h > 40 && artwork.color.h <= 55);
+      return {
+        ...artworks,
+        array: action.artworks.filter((artwork) => artwork.color.h > 40 && artwork.color.h <= 55),
+        selectedColor: action.type,
+      };
     case 'GREEN':
-      return action.artworks.filter((artwork) => artwork.color.h > 55 && artwork.color.h < 180);
+      return {
+        ...artworks,
+        array: action.artworks.filter((artwork) => artwork.color.h > 55 && artwork.color.h < 180),
+        selectedColor: action.type,
+      };
     case 'ORANGE':
-      return action.artworks.filter((artwork) => artwork.color.h > 10 && artwork.color.h <= 40);
+      return {
+        ...artworks,
+        array: action.artworks.filter((artwork) => artwork.color.h > 10 && artwork.color.h <= 40),
+        selectedColor: action.type,
+      };
     case 'PURPLE':
-      return action.artworks.filter((artwork) => artwork.color.h > 220 && artwork.color.h < 300);
+      return {
+        ...artworks,
+        array: action.artworks.filter((artwork) => artwork.color.h > 220 && artwork.color.h < 300),
+        selectedColor: action.type,
+      };
     default:
       return artworks;
   }

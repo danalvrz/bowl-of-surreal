@@ -42,6 +42,7 @@ const Homepage = () => {
             }}
             className="ml-10 h-8 rounded border bg-gray-900 px-1 text-white"
           >
+            <option selected="selected">Select a color</option>
             <option value="all">All colors</option>
             <option value="blue">Blue</option>
             <option value="red">Red</option>
@@ -54,7 +55,7 @@ const Homepage = () => {
       </div>
       <div className="mb-auto">
         <section className="flex flex-wrap bg-gray-900">
-          <TodaysBowl visibleArtworkList={visibleArtworkList} />
+          <TodaysBowl visibleArtworkList={visibleArtworkList.array} />
         </section>
       </div>
     </div>
