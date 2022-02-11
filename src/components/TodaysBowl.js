@@ -13,37 +13,52 @@ const TodaysBowl = (payload) => {
     visibleArtworkList.forEach((artwork) => {
       if (artwork.color !== null) {
         bgColor = `hsl(${artwork.color.h}, ${artwork.color.s}%, ${artwork.color.l}%)`;
-      } else { bgColor = 'hsl(40, 2%, 21%)'; }
+      } else {
+        bgColor = 'hsl(40, 2%, 21%)';
+      }
       artArray.push(
         <Link
           to={`/artwork/${artwork.id}`}
           key={artwork.id}
           style={{ backgroundColor: bgColor }}
           className="
-      era-card h-48 w-1/2
-      text-white flex"
+      era-card flex h-48
+      w-1/2 text-white"
         >
-          <div className="flex-row p-5 h-full w-full">
-            <p className={`font-Work text-lg font-bold mb-auto text-right ${artwork.color.l > 80 ? 'text-neutral-400' : 'text-white'}`}>{artwork.title.length > 60 ? artwork.title.substr(0, 60).concat('...') : artwork.title }</p>
-            <p className={`font-Lato text-sm font-bold mt-1 text-right ${artwork.color.l > 80 ? 'text-neutral-400' : 'text-white'}`}>{artwork.artist_title ? artwork.artist_title : 'Unknown'}</p>
+          <div className="h-full w-full flex-row p-5">
+            <p
+              className={`font-Work mb-auto text-right text-lg font-bold ${
+                artwork.color.l > 80 ? 'text-neutral-400' : 'text-white'
+              }`}
+            >
+              {artwork.title.length > 60
+                ? artwork.title.substr(0, 60).concat('...')
+                : artwork.title}
+            </p>
+            <p
+              className={`font-Lato mt-1 text-right text-sm font-bold ${
+                artwork.color.l > 80 ? 'text-neutral-400' : 'text-white'
+              }`}
+            >
+              {artwork.artist_title ? artwork.artist_title : 'Unknown'}
+            </p>
           </div>
         </Link>,
-
       );
     });
     return artArray;
-  } if (responseStatus === 'LOADING') {
+  }
+  if (responseStatus === 'LOADING') {
     return <Loading />;
-  } if (responseStatus === 'ERROR') {
+  }
+  if (responseStatus === 'ERROR') {
     return <ErrorScreen />;
   }
   return (
-    <div className="text-white font-Lato text-3xl font-bold mx-auto p-20 h-screen text-center">
-      Oops! Seems like
-      today&lsquo;s bowl doesn&lsquo;t have that color!
+    <div className="font-Lato mx-auto h-screen p-20 text-center text-3xl font-bold text-white">
+      Oops! Seems like today&lsquo;s bowl doesn&lsquo;t have that color!
       {' '}
       <br />
-      {' '}
       {' '}
       <br />
       {' '}

@@ -3,12 +3,23 @@ import fetchArtwork from '../utils/fetchArtworks';
 
 const tryAgain = () => fetchArtwork();
 const ErrorScreen = () => (
-  <section className="w-full h-52 text-4XL p-20 pt-10 text-white mt-auto mx-auto text-center">
-    <p className="font-Work font-bold text-3xl"> Oops! Something went wrong!</p>
-    <p className="font-Work text-gray-300 italic my-5">500: Internal Server Error</p>
-    <p className="font-Lato font-semibold text-xl my-8">Seems like, as I do, it could use a cup of coffee...</p>
-    <span className="w-full container flex"><button type="button" onClick={tryAgain} className="bg-gray-700 font-Work text-gray-300 italic font-bold border w-2/3 mx-auto p-3 rounded text-xl">Try Again</button></span>
-
+  <section className="text-4XL mx-auto mt-auto h-52 w-full p-20 pt-10 text-center text-white">
+    <p className="font-Work text-3xl font-bold"> Oops! Something went wrong!</p>
+    <p className="font-Work my-5 italic text-gray-300">
+      500: Internal Server Error
+    </p>
+    <p className="font-Lato my-8 text-xl font-semibold">
+      Seems like, as I do, it could use a cup of coffee...
+    </p>
+    <span className="container flex w-full">
+      <button
+        type="button"
+        onClick={tryAgain}
+        className="font-Work mx-auto w-2/3 rounded border bg-gray-700 p-3 text-xl font-bold italic text-gray-300"
+      >
+        Try Again
+      </button>
+    </span>
   </section>
 );
 
