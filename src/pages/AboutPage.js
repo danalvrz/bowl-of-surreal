@@ -32,7 +32,7 @@ const AboutPage = () => (
       </a>
       {' '}
       assigned by the institute as part the piece&apos;s details, which was used
-      to add color to the this UI.
+      to add color to the UI.
       <br />
       <br />
       Happy surreal-bowling!
