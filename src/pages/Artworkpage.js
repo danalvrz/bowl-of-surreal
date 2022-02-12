@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
@@ -16,25 +16,25 @@ const ArtworkPage = () => {
         style={{ backgroundColor: bgColor }}
         className="home-card flex h-96 pt-8"
       >
-        <span
+        <h1
           className={`font-Lato mx-auto my-auto px-3 text-center text-3xl font-bold ${
             currentArtwork.color.l > 80 ? 'text-neutral-400' : 'text-white'
           }`}
         >
           {currentArtwork.title}
-        </span>
+        </h1>
       </section>
 
-      <section className="details mb-20 p-5 font-normal text-white">
+      <main className="details mb-20 p-5 font-normal text-white">
         <img
           className="my-5 mx-auto"
           src={`https://www.artic.edu/iiif/2/${currentArtwork.image_id}/full/843,/0/default.jpg`}
           alt={currentArtwork.title}
         />
-        <div className="font-Work my-3 h-8 bg-gray-800 px-4 pt-1 text-white">
+        <h2 className="font-Work my-3 h-8 bg-gray-800 px-4 pt-1 text-white">
           Artwork Details
-        </div>
-        <div className="ml-4">
+        </h2>
+        <Fragment className="ml-4">
           <p className="font-Lato text-xl font-semibold">
             <span className="mr-3 text-xl font-normal text-gray-400">
               Artist:
@@ -69,8 +69,8 @@ const ArtworkPage = () => {
               ? currentArtwork.medium_display
               : 'Unknown'}
           </p>
-        </div>
-      </section>
+        </Fragment>
+      </main>
     </div>
   );
 };

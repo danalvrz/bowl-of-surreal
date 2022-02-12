@@ -3,9 +3,9 @@ import Cereal from '../imgs/cereal.png';
 
 const AboutPage = () => (
   <section className="text-4XL mx-auto mt-auto h-52 w-full p-20 pt-20 text-center text-white">
-    <p className="font-Work pt-10 text-4xl font-bold"> About this app</p>
+    <h1 className="font-Work pt-10 text-4xl font-bold"> About this app</h1>
     <p className="font-Lato py-10 text-xl leading-10">
-      Bowl-of-surreal is a fun little treat to enjoy while having a bowl of
+      Bowl-of-surreal is a fun little visual treat to enjoy while having a bowl of
       cereal in the morning. It was possible thanks to the
       {' '}
       <a
@@ -31,7 +31,7 @@ const AboutPage = () => (
         HSL color code
       </a>
       {' '}
-      assigned by the institute as part the piece&apos;s details, which was used
+      assigned by the institute as part of the piece&apos;s details, which was used
       to add color to the UI.
       <br />
       <br />
