@@ -13,9 +13,20 @@ const Homepage = () => {
       <section id="welcome" role="note" className="home-card flex-col h-64 w-full bg-gray-900 pt-20 mb-5">
         <h1 className="not-italic font-Work text-2xl  text-center font-bold text-white">Welcome!</h1>
         <div className="flex mb-5">
-          <p className="italic font-Lato mx-auto w-2/5 text-base text-right font-normal text-white">
+          <p className="font-Lato mx-auto w-2/5 text-base text-right font-normal text-white">
             <br />
-            Everytime you visit this site, it will display a random bowl of 20 artworks.
+            Every time you visit this site, it will display a
+            random bowl of 20 artworks from the
+            {' '}
+            <a
+              href="https://www.artic.edu"
+              className="text-gray-400"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Art Institute of Chicago
+            </a>
+            .
             <br />
             Explore and enjoy!
           </p>
@@ -50,7 +61,7 @@ const Homepage = () => {
               <option value="yellow">Yellow</option>
               <option value="green">Green</option>
               <option value="orange">Orange</option>
-              <option value="purple">Prurple</option>
+              <option value="purple">Purple</option>
             </select>
           </span>
         </div>

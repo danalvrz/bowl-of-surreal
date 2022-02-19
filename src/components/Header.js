@@ -39,7 +39,7 @@ const Header = () => {
           className="pr-3"
           onClick={() => dispatch({ type: 'SHOW' })}
         >
-          <img alt="options" src={Dots} width="25" className="pt-1 invert" />
+          <img alt="options" src={Dots} width="35" className="invert" />
         </button>
       </header>
       <Options />
