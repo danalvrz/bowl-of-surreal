@@ -23,7 +23,7 @@ const TodaysBowl = (payload) => {
           style={{ backgroundColor: bgColor }}
           className="
       era-card flex h-48
-      w-1/2 text-white"
+      w-1/2 lg:w-1/4 text-white"
         >
           <div className="h-full w-full flex-row p-5">
             <p
