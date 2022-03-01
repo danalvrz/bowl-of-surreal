@@ -31,8 +31,8 @@ const TodaysBowl = (payload) => {
                 artwork.color.l > 80 ? 'text-neutral-400' : 'text-white'
               }`}
             >
-              {artwork.title.length > 60
-                ? artwork.title.substr(0, 60).concat('...')
+              {artwork.title.length > 55
+                ? artwork.title.substr(0, 55).concat('...')
                 : artwork.title}
             </p>
             <p

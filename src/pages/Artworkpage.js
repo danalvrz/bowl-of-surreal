@@ -17,7 +17,7 @@ const ArtworkPage = () => {
         className="home-card flex h-96 pt-8"
       >
         <h1
-          className={`font-Lato mx-auto my-auto px-3 text-center text-3xl font-bold ${
+          className={`font-Lato mx-auto my-auto px-10 text-center  font-bold ${currentArtwork.title.length < 120 ? 'text-3xl' : 'text-2xl'} ${
             currentArtwork.color.l > 80 ? 'text-neutral-400' : 'text-white'
           }`}
         >
