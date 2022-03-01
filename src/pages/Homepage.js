@@ -10,7 +10,7 @@ const Homepage = () => {
   const allArtworks = useSelector((state) => state.artworks);
   return (
     <div>
-      <section id="welcome" role="note" className="home-card flex-col h-64 w-full bg-gray-900 pt-20 mb-5">
+      <section id="welcome" role="note" className="home-card flex-col h-fit w-full bg-gray-900 pt-20 mb-5">
         <h1 className="not-italic font-Work text-2xl  text-center font-bold text-white">Welcome!</h1>
         <div className="flex mb-5">
           <p className="font-Lato mx-auto w-2/5 text-base text-right font-normal text-white">
