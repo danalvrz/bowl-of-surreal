@@ -22,7 +22,7 @@ function App() {
   });
 
   return (
-    <div className="App">
+    <div className="App bg-gradient-to-tl from-slate-800 via-slate-700  to-gray-900">
       <Router>
         <Header />
         <Routes>

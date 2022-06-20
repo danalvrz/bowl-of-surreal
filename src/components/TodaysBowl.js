@@ -23,12 +23,12 @@ const TodaysBowl = (payload) => {
           style={{ backgroundColor: bgColor }}
           className="
       era-card flex h-48
-      w-1/2 lg:w-1/4 text-white"
+      w-1/2 lg:min-w-[5%] lg:max-w-[20rem] hover:lg:scale-105 transition ease-in-out duration-300 text-white m-2 my-4 rounded-2xl"
         >
-          <div className="h-full w-full flex-row p-5">
+          <div className="rounded-2xl h-full w-full flex-row p-5 bg-gradient-to-bl transition ease-in-out duration-300 from-transparent  hover:lg:to-slate-500 to-slate-600 mix-blend-hard-light">
             <p
               className={`font-Work mb-auto text-right text-lg font-bold ${
-                artwork.color.l > 80 ? 'text-neutral-400' : 'text-white'
+                artwork.color.l > 80 ? 'text-neutral-700' : 'text-white'
               }`}
             >
               {artwork.title.length > 55
@@ -36,8 +36,8 @@ const TodaysBowl = (payload) => {
                 : artwork.title}
             </p>
             <p
-              className={`font-Lato mt-1 text-right text-sm font-bold ${
-                artwork.color.l > 80 ? 'text-neutral-400' : 'text-white'
+              className={`z-40 font-Lato mt-1 text-right text-sm font-bold ${
+                artwork.color.l > 80 ? 'text-neutral-600' : 'text-white'
               }`}
             >
               {artwork.artist_title ? artwork.artist_title : 'Unknown'}
