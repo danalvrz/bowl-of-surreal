@@ -46,8 +46,6 @@ The test environment is set up with jest and jest-watcher run `npm test` to run 
 👤 **Dante Alvarez**
 
 - GitHub: [@danalvrz](https://github.com/danalvrz)
-- Twitter: [@danalvrz](https://twitter.com/danalvrz)
-- LinkedIn: [LinkedIn](https://www.linkedin.com/in/dante-álvarez-p)
 
 ## Acknowledgements
 
